@@ -8,8 +8,8 @@ class Experience(
     description: String,
     startYear: Int,
     startMonth: Int,
-    endYear: Int,
-    endMonth: Int,
+    endYear: Int?,
+    endMonth: Int?,
     isActive: Boolean
 ) : BaseEntity() {
     @Id

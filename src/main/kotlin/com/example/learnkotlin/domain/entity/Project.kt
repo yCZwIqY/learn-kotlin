@@ -8,8 +8,8 @@ class Project(
     description: String,
     startYear: Int,
     startMonth: Int,
-    endYear: Int,
-    endMonth: Int,
+    endYear: Int?,
+    endMonth: Int?,
     isActive: Boolean
 ) : BaseEntity() {
     @Id
@@ -32,7 +32,7 @@ class Project(
     @JoinColumn(name = "project_id")
     var details: MutableList<ProjectDetail> = mutableListOf()
 
-    @OneToMany(mappedBy = "project", targetEntity = Skill::class, fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     var skills: MutableList<ProjectSkill> = mutableListOf()
 
 

@@ -1,5 +1,6 @@
 package com.example.learnkotlin.domain.repository
 
+import com.example.learnkotlin.domain.entity.Link
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface Link : JpaRepository<Link, Long>
+interface LinkRepository : JpaRepository<Link, Long>
