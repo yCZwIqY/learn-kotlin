@@ -4,5 +4,5 @@ import com.example.learnkotlin.domain.entity.Project
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProjectRepository : JpaRepository<Project, Long> {
-    fun findByIsActive(isActive: Boolean): List<Project>
+    fun findAllByIsActive(isActive: Boolean): List<Project>
 }

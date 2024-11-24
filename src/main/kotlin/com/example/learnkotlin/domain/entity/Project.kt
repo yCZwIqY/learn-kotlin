@@ -22,8 +22,11 @@ class Project(
     var description: String = description
 
     var startYear: Int = startYear
+
     var startMonth: Int = startMonth
+
     var endYear: Int? = endYear
+
     var endMonth: Int? = endMonth
 
     var isActive: Boolean = isActive
