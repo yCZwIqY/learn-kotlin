@@ -72,4 +72,10 @@ class ExperienceRepositoryTest(
         }
         println("====== findAll 테스트 종료======")
     }
+
+    @Test
+    fun test() {
+       val experience = experienceRepository.findById(1)
+        println(experience.isPresent)
+    }
 }

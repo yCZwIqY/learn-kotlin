@@ -5,7 +5,6 @@ import com.example.learnkotlin.domain.entity.Project
 import com.example.learnkotlin.domain.entity.ProjectDetail
 import com.example.learnkotlin.domain.entity.ProjectSkill
 import com.example.learnkotlin.domain.entity.Skill
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
@@ -47,10 +46,13 @@ class ProjectRepositoryTest(
 
         val skills = skillRepository.findAll()
         val skillUSedProject = skills.subList(0, n)
+        val projectSkills = mutableListOf<ProjectSkill>()
         for (skill in skillUSedProject) {
             val projectSkill = ProjectSkill(project = project, skill = skill)
-            projectSkill.skill
+            projectSkills.add(projectSkill)
         }
+
+        project.skills.addAll(projectSkills)
 
         return project
     }
@@ -91,5 +93,11 @@ class ProjectRepositoryTest(
             println("project.skill.size: ${project.skills.size}")
         }
         println("====== findAll 테스트 종료======")
+    }
+
+    @Test
+    fun test() {
+        val experience = projectRepository.findById(1)
+        println(experience.isPresent)
     }
 }
