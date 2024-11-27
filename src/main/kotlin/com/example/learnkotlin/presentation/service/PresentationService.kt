@@ -40,7 +40,7 @@ class PresentationService(
     }
 
     @Transactional(readOnly = true)
-    fun getProject(): List<ProjectDTO> {
+    fun getProjects(): List<ProjectDTO> {
         val projects = presentationRepository.getActiveProjects()
 
         return projects.map { ProjectDTO(it) }
