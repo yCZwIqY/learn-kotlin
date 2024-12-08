@@ -7,13 +7,39 @@ import org.springframework.web.servlet.HandlerInterceptor
 import org.springframework.web.servlet.ModelAndView
 
 @Component
-class AdminInterceptor: HandlerInterceptor {
+class AdminInterceptor : HandlerInterceptor {
     override fun postHandle(
         request: HttpServletRequest,
         response: HttpServletResponse,
         handler: Any,
         modelAndView: ModelAndView?
     ) {
-        super.postHandle(request, response, handler, modelAndView)
+        val menus = listOf<MenuDTO>(
+            MenuDTO(
+                name = "index",
+                pages = listOf<PageDTO>(
+                    PageDTO(name = "Introduction", url = "/admin/introduction"),
+                    PageDTO(name = "Link", url = "/admin/link"),
+                )
+            ),
+            MenuDTO(
+                name = "Resume",
+                pages = listOf<PageDTO>(
+                    PageDTO(name = "Experience", url = "/admin/experience"),
+                    PageDTO(name = "Achievement", url = "/admin/achievement"),
+                    PageDTO(name = "Skills", url = "/admin/skill"),
+                )
+            ),
+            MenuDTO(
+                name = "Project",
+                pages = listOf<PageDTO>(
+                    PageDTO(name = "Project", url = "/admin/project"),
+                    PageDTO(name = "ProjectSkill", url = "/admin/project/skill"),
+                )
+            )
+        )
+
+
+        modelAndView?.model?.put("menus", menus)
     }
 }
