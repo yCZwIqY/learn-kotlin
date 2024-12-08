@@ -11,7 +11,7 @@ class ProjectSkill(project: Project, skill: Skill) : BaseEntity() {
 
     @ManyToOne(targetEntity = Project::class, fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id", nullable = false)
-    val project: Project? = project
+    val project: Project = project
 
     @ManyToOne(targetEntity = Skill::class, fetch = FetchType.LAZY)
     @JoinColumn(name = "skill_id", nullable = false)
