@@ -37,10 +37,10 @@ class AdminProjectViewController(
         model.addAttribute("detailFormElements", detailFormElements)
 
 
-        val table = adminProjectService.getExperienceTable()
+        val table = adminProjectService.getProjectTable()
         model.addAttribute("table", table)
 
-        val detailTable = adminProjectService.getDetailExperienceTable(null)
+        val detailTable = adminProjectService.getDetailProjectTable(null)
         model.addAttribute("detailTable", detailTable)
 
         val pageAttributes = mutableMapOf<String, Any>(

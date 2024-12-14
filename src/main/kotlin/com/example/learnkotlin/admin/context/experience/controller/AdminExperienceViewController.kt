@@ -1,5 +1,6 @@
 package com.example.learnkotlin.admin.context.achievement.controller
 
+import com.example.learnkotlin.admin.context.achievement.service.AdminExperienceService
 import com.example.learnkotlin.admin.context.achievement.service.AdminProjectService
 import com.example.learnkotlin.admin.data.FormElementDTO
 import com.example.learnkotlin.admin.data.SelectFormElementDTO
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 @Controller
 @RequestMapping("/admin/experience")
 class AdminExperienceViewController(
-    private val adminExperienceService: AdminProjectService
+    private val adminExperienceService: AdminExperienceService
 ) {
     @GetMapping
     fun achievement(model: Model): String {
