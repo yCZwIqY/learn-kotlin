@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+
+<div th:replace="~{admin/fragments/fragment-head :: head}"></div>
+
+<body>
+
+<!-- ======= Header ======= -->
+<div th:replace="~{admin/fragments/fragment-header :: header}"></div>
+
+<!-- ======= Sidebar ======= -->
+<div th:replace="~{admin/fragments/fragment-sidebar :: sidebar}"></div>
+
+<main th:replace="${content}">
+    <p>Contents</p>
+</main>
+
+<!-- ======= Footer ======= -->
+<div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
+
+<div th:replace="~{admin/fragments/fragment-foot :: foot}"></div>
+
+<div th:replace="~{admin/fragments/fragment-script-util :: util}"></div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+
+</html>

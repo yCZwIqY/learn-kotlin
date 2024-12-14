@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="pagetitle" th:fragment="pageTitle">
+  <h1 th:text="${pageName}">Data Tables</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html" th:href="@{/admin}">Home</a></li>
+<!--      <div th:text="${menuName.length}"></div>-->
+      <li class="breadcrumb-item" th:text="${menuName}" th:if="${menuName != null}">Tables</li>
+      <li class="breadcrumb-item active" th:text="${pageName}">Data</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+</body>
+</html>
