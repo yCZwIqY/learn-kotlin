@@ -1,5 +1,6 @@
 package com.example.learnkotlin.admin.context.link.service
 
+import com.example.learnkotlin.admin.context.link.form.LinkForm
 import com.example.learnkotlin.admin.data.TableDTO
 import com.example.learnkotlin.domain.entity.Link
 import com.example.learnkotlin.domain.repository.LinkRepository
@@ -12,5 +13,15 @@ class AdminLinkService(val linkRepository: LinkRepository) {
         val entities = linkRepository.findAll()
 
         return TableDTO.from(classInfo, entities)
+    }
+
+    fun save(form: LinkForm) {
+        val link = form.toEntity()
+        linkRepository.save(link)
+    }
+
+    fun update(id: Long, form: LinkForm) {
+        val link = form.toEntity(id)
+        linkRepository.save(link)
     }
 }
