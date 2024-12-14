@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
-@RequestMapping("/admin/project/skill")
+@RequestMapping("/admin/projects/skill")
 class AdminProjectSkillViewController(
     private val adminProjectSkillService: AdminProjectSkillService
 ) {
